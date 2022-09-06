@@ -10,6 +10,9 @@ import { PlayerModalComponent } from './components/player-modal/player-modal.com
 import { PlayerTableComponent } from './components/player-table/player-table.component';
 import { SessionTimerComponent } from './components/session-timer/session-timer.component';
 import { SummaryTableComponent } from './components/summary-table/summary-table.component';
+import { CreateComponent } from './pages/create/create.component';
+import { NewPlayerComponent } from './pages/new-player/new-player.component';
+import { SessionComponent } from './pages/session/session.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +24,9 @@ import { SummaryTableComponent } from './components/summary-table/summary-table.
     PlayerTableComponent,
     SessionTimerComponent,
     SummaryTableComponent,
+    CreateComponent,
+    NewPlayerComponent,
+    SessionComponent,
   ],
   imports: [
     BrowserModule,
