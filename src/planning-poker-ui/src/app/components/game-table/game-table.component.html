@@ -1,1 +1,9 @@
-<p>game-table works!</p>
+<div [class]="getGameTableStyle()">
+  <div class="task-name-form">
+    <form [formGroup]="formModel" (ngSubmit)="handleFormSubmit()" style="display: flex; flex: 1 auto">
+      <input (onblur)="handleFormSubmit()" type="text" class="task-name"
+        placeholder="Defina o nome da história / tarefa" formControlName="description" />
+    </form>
+  </div>
+  <ng-content></ng-content>
+</div>

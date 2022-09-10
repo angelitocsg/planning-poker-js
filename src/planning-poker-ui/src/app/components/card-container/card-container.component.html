@@ -1,6 +1,6 @@
 <div class="card-area">
-  <div class={{getContainerStyle()}}>
+  <div [class]="getContainerStyle()">
     <ng-content></ng-content>
   </div>
-  <span *ngIf="getLabel()" class={{getCardLabelStyle()}}>{{label}}</span>
+  <span *ngIf="getLabel()" [class]="getCardLabelStyle()">{{label}}</span>
 </div>

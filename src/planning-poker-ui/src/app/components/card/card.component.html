@@ -1,7 +1,7 @@
-<button *ngIf="getSide()" type="button" class={{getCardFrontStyle()}} (click)="handleClick()">
+<button *ngIf="getSide()" type="button" [class]="getCardFrontStyle()" (click)="handleClick()">
   <app-card-text [small]="small" [number]="number"></app-card-text>
 </button>
 
-<div *ngIf="getSide()==false" class={{getCardBackStyle()}}>
-  <div class={{getCardBackLineStyle()}}></div>
+<div *ngIf="getSide()==false" [class]="getCardBackStyle()">
+  <div [class]="getCardBackLineStyle()"></div>
 </div>
