@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'planning-poker-ui';
+  title = 'Planning Poker | @angelitocsg';
 }

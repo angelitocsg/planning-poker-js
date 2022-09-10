@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CardComponent } from './components/card/card.component';
+import { CardContainerComponent } from './components/card-container/card-container.component';
 import { CardTextComponent } from './components/card-text/card-text.component';
+import { CardComponent } from './components/card/card.component';
 import { GameTableComponent } from './components/game-table/game-table.component';
 import { PlayerModalComponent } from './components/player-modal/player-modal.component';
 import { PlayerTableComponent } from './components/player-table/player-table.component';
@@ -18,6 +20,7 @@ import { SessionComponent } from './pages/session/session.component';
   declarations: [
     AppComponent,
     CardComponent,
+    CardContainerComponent,
     CardTextComponent,
     GameTableComponent,
     PlayerModalComponent,
@@ -28,11 +31,8 @@ import { SessionComponent } from './pages/session/session.component';
     NewPlayerComponent,
     SessionComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
