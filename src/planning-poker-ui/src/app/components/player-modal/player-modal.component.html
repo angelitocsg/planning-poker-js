@@ -1,1 +1,19 @@
-<p>player-modal works!</p>
+@using PlanningPoker.Core.FormModel
+
+<form [formGroup]="formModel" (ngSubmit)="handleFormSubmit()" style="display: flex; flex: 1 auto">
+  <div class="modal">
+    <div class="modal-dialog">
+      <div class="modal-title">
+        <a href="/">Planning Poker</a>
+      </div>
+      <div class="modal-body">
+        <input type="text" class="form-input" placeholder="Digite seu nome" formControlName="playerName" />
+        <div class="btn-group">
+          <button *ngIf="labelCancel" type="button" class="btn btn-secondary"
+            (onclick)="onCancelClick">{{labelCancel}}</button>
+          <button type="submit" [class]="getBtnPrimaryStyle()" [disabled]="disabledOk">@LabelOk</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
