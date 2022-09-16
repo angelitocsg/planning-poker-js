@@ -1,5 +1,3 @@
-@using PlanningPoker.Core.FormModel
-
 <form [formGroup]="formModel" (ngSubmit)="handleFormSubmit()" style="display: flex; flex: 1 auto">
   <div class="modal">
     <div class="modal-dialog">
@@ -11,7 +9,7 @@
         <div class="btn-group">
           <button *ngIf="labelCancel" type="button" class="btn btn-secondary"
             (onclick)="onCancelClick">{{labelCancel}}</button>
-          <button type="submit" [class]="getBtnPrimaryStyle()" [disabled]="disabledOk">@LabelOk</button>
+          <button type="submit" [class]="getBtnPrimaryStyle()" [disabled]="disabledOk">{{labelOk}}</button>
         </div>
       </div>
     </div>

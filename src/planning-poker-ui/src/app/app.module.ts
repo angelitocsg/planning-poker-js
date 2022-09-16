@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { StoreModule } from '@ngrx/store';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,7 @@ import { SummaryTableComponent } from './components/summary-table/summary-table.
 import { CreateComponent } from './pages/create/create.component';
 import { NewPlayerComponent } from './pages/new-player/new-player.component';
 import { SessionComponent } from './pages/session/session.component';
+import { GameReducer } from './store/game.reducer';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,14 @@ import { SessionComponent } from './pages/session/session.component';
     NewPlayerComponent,
     SessionComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    ReactiveFormsModule,
+    StoreModule.forRoot({
+      stateContainer: GameReducer,
+    }),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

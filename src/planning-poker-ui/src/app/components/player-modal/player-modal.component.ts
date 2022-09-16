@@ -11,8 +11,8 @@ export class PlayerModalComponent implements OnInit {
   @Input() labelOk?: string;
   @Input() labelCancel?: string;
   @Input() title?: string;
-  @Output() onOkClick!: EventEmitter<string>;
-  @Output() onCancelClick!: EventEmitter<any>;
+  @Output() onOkClick: EventEmitter<string> = new EventEmitter<string>();
+  @Output() onCancelClick: EventEmitter<any> = new EventEmitter();
 
   formModel = this.formBuilder.group({
     playerName: '',
@@ -27,8 +27,7 @@ export class PlayerModalComponent implements OnInit {
   ngOnInit(): void {}
 
   handleFormSubmit() {
-    console.log('FormModel.PlayerName: {0}', this.playerName);
-
+    console.log('formModel.PlayerName: ', this.playerName);
     if (this.playerName) this.onOkClick?.emit(this.playerName);
   }
 
