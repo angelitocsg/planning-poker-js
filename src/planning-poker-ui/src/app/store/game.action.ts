@@ -1,16 +1,26 @@
-import { Action, createAction, props } from '@ngrx/store';
+import { createAction, props } from '@ngrx/store';
+import { GameSessionViewModel } from '../models/game-session-view-model';
 
 export enum GameActionType {
-  CHANGE_SESSION_ID = 'CHANGE_SESSION_ID',
-  CHANGE_LOCAL_PLAYER_NAME = 'CHANGE_LOCAL_PLAYER_NAME',
+  UPDATE_SESSION_AND_PLAYER = 'UPDATE_SESSION_AND_PLAYER',
+  UPDATE_LOCAL_PLAYER_NAME = 'UPDATE_LOCAL_PLAYER_NAME',
+  UPDATE_GAME_SESSION = 'UPDATE_GAME_SESSION',
+  RESET_SESSION = 'RESET_SESSION',
 }
 
-export const changeSessionIdAction = createAction(
-  GameActionType.CHANGE_SESSION_ID,
-  props<{ sessionId: string }>()
+export const updateSessionAndPlayerAction = createAction(
+  GameActionType.UPDATE_SESSION_AND_PLAYER,
+  props<{ sessionId: string; localPlayerName: string }>()
 );
 
-export const changeLocalPlayerNameAction = createAction(
-  GameActionType.CHANGE_LOCAL_PLAYER_NAME,
+export const updateLocalPlayerNameAction = createAction(
+  GameActionType.UPDATE_LOCAL_PLAYER_NAME,
   props<{ localPlayerName: string }>()
 );
+
+export const updateGameSessionAction = createAction(
+  GameActionType.UPDATE_GAME_SESSION,
+  props<{ gameSession: GameSessionViewModel }>()
+);
+
+export const resetSession = createAction(GameActionType.RESET_SESSION);
