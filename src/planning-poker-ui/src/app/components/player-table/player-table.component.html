@@ -1,1 +1,49 @@
-<p>player-table works!</p>
+<div class=@PlayerTableStyle>
+  <div class="player-table-text">
+    <span *ngIf="active">@PlayerName, escolha sua pontuação:</span>
+    <span *ngIf="!active">@PlayerName, aguarde o início</span>
+  </div>
+  <div class="player-cards">
+    <app-card-container *ngIf="placed === allCardNumbers.One" [small]="true"></app-card-container>
+    <app-card-container Small>
+      <app-card *ngIf="placed !==  allCardNumbers.One" [small]="true" [number]="allCardNumbers.One"
+        [side]="active ? allSides.Front : allSides.Back" (onClick)="onCardNumberClick"></app-card>
+    </app-card-container>
+
+    <app-card-container *ngIf="placed === allCardNumbers.Two" [small]="true"></app-card-container>
+    <app-card-container Small>
+      <app-card *ngIf="placed !==  allCardNumbers.Two" [small]="true" [number]="allCardNumbers.Two"
+        [side]="active ? allSides.Front : allSides.Back" (onClick)="onCardNumberClick"></app-card>
+    </app-card-container>
+
+    <app-card-container *ngIf="placed === allCardNumbers.Three" [small]="true"></app-card-container>
+    <app-card-container Small>
+      <app-card *ngIf="placed !==  allCardNumbers.Three" [small]="true" [number]="allCardNumbers.Three"
+        [side]="active ? allSides.Front : allSides.Back" (onClick)="onCardNumberClick"></app-card>
+    </app-card-container>
+
+    <app-card-container *ngIf="placed === allCardNumbers.Five" [small]="true"></app-card-container>
+    <app-card-container Small>
+      <app-card *ngIf="placed !==  allCardNumbers.Five" [small]="true" [number]="allCardNumbers.Five"
+        [side]="active ? allSides.Front : allSides.Back" (onClick)="onCardNumberClick"></app-card>
+    </app-card-container>
+
+    <app-card-container *ngIf="placed === allCardNumbers.Eight" [small]="true"></app-card-container>
+    <app-card-container Small>
+      <app-card *ngIf="placed !==  allCardNumbers.Eight" [small]="true" [number]="allCardNumbers.Eight"
+        [side]="active ? allSides.Front : allSides.Back" (onClick)="onCardNumberClick"></app-card>
+    </app-card-container>
+
+    <app-card-container *ngIf="placed === allCardNumbers.Thirteen" [small]="true"></app-card-container>
+    <app-card-container Small>
+      <app-card *ngIf="placed !==  allCardNumbers.Thirteen" [small]="true" [number]="allCardNumbers.Thirteen"
+        [side]="active ? allSides.Front : allSides.Back" (onClick)="onCardNumberClick"></app-card>
+    </app-card-container>
+
+    <app-card-container *ngIf="placed === allCardNumbers.TwentyOne" [small]="true"></app-card-container>
+    <app-card-container Small>
+      <app-card *ngIf="placed !==  allCardNumbers.TwentyOne" [small]="true" [number]="allCardNumbers.TwentyOne"
+        [side]="active ? allSides.Front : allSides.Back" (onClick)="onCardNumberClick"></app-card>
+    </app-card-container>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+.session-container {
+  width: 135px;
+  height: 105px;
+  flex-direction: column;
+  border-radius: 15px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+  .session-container .session-timer {
+      flex: 1;
+      margin-top: 3px;
+      justify-content: center;
+      align-items: center;
+      box-shadow: none;
+      filter: none;
+      border-radius: 15px 15px 0 0;
+      background: var(--bg-item-default);
+      box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+      .session-container .session-timer.highlight {
+          background: var(--bg-item-highlight);
+      }
+
+      .session-container .session-timer .session-timer-text {
+          font-weight: 700;
+          font-size: 36px;
+          color: var(--text-default);
+          box-shadow: none;
+          filter: none;
+      }
+
+  .session-container .session-button {
+      justify-content: center;
+      align-items: center;
+      border-radius: 0px 0px 15px 15px;
+      height: 40px;
+      font-weight: 700;
+      font-size: 24px;
+  }

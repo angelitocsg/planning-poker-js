@@ -4,7 +4,7 @@ export interface IGameSessionViewModel {
   id: string;
   description: string;
   owner: PlayerViewModel;
-  player: PlayerViewModel[];
+  players: PlayerViewModel[];
   active: boolean;
   createAt?: Date;
   startedAt?: Date;
@@ -21,7 +21,7 @@ export class GameSessionViewModel implements IGameSessionViewModel {
   id: string = '';
   description: string = '';
   owner: PlayerViewModel = new PlayerViewModel('');
-  player: PlayerViewModel[] = [];
+  players: PlayerViewModel[] = [];
   active: boolean = false;
   createAt?: Date;
   startedAt?: Date;

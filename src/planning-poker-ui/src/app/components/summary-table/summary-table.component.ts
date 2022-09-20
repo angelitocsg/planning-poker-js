@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Side } from '../../core/enums/side';
+import { SummaryViewModel } from '../../models/summary-view-model';
 
 @Component({
   selector: 'app-summary-table',
   templateUrl: './summary-table.component.html',
-  styleUrls: ['./summary-table.component.scss']
+  styleUrls: ['./summary-table.component.scss'],
 })
 export class SummaryTableComponent implements OnInit {
+  @Input() summaryData?: SummaryViewModel[];
 
-  constructor() { }
-
-  ngOnInit(): void {
+  get side() {
+    return Side.Front;
   }
 
+  constructor() {}
+
+  ngOnInit(): void {}
 }

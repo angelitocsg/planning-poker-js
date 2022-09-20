@@ -1,1 +1,7 @@
-<p>summary-table works!</p>
+<div class="summary-table highlight">
+  <div class="summary-cards">
+    <app-card-container *ngFor="let item of summaryData" [small]="true" [label]="item.votes">
+      <app-card [small]="true" [number]="item.number" [side]="side"></app-card>
+    </app-card-container>
+  </div>
+</div>

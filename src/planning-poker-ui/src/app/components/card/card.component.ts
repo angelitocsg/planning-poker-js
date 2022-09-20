@@ -45,6 +45,8 @@ export class CardComponent implements OnInit {
   }
 
   handleClick() {
-    if (this.number != null && this.onClick != null) this.onClick(this.number);
+    if (this.number != null && this.onClick != null) {
+      this.onClick(this.number);
+    }
   }
 }

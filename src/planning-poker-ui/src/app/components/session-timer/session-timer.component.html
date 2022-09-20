@@ -1,1 +1,10 @@
-<p>session-timer works!</p>
+<div class="session-container">
+  <div [class]="sessionTimerStyle">
+    <span class="session-timer-text">
+      {{timer}}
+    </span>
+  </div>
+  <button type="button" [class]="sessionButtonStyle" (onclick)="handleOnClick">
+    {{label}}
+  </button>
+</div>
