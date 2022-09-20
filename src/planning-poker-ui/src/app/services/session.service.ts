@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import * as signalR from '@microsoft/signalr';
 import { Store } from '@ngrx/store';
+import { environment } from '../../environments/environment';
 
 import { CardNumber } from '../core/enums/card-number';
 import { GameHubActions } from '../core/game-hub-actions';
@@ -28,7 +29,7 @@ export class SessionService {
 
   async connect() {
     this.connection = new signalR.HubConnectionBuilder()
-      .withUrl('/chathub')
+      .withUrl(environment.backendUrl)
       .withAutomaticReconnect()
       .configureLogging(signalR.LogLevel.Information)
       .build();
@@ -130,7 +131,7 @@ export class SessionService {
     );
   }
 
-  async SelectCardNumber(number: CardNumber) {
+  async selectCardNumber(number: CardNumber) {
     var playerName = await this.getPlayerName();
     var sessionId = await this.getSessionId();
     console.log('[Service] SelectCardNumber: ', sessionId, playerName);
@@ -143,7 +144,7 @@ export class SessionService {
     );
   }
 
-  async HasSession(pSessionId?: string) {
+  async hasSession(pSessionId?: string) {
     var sessionId = pSessionId ?? (await this.getSessionId());
     console.log('[Service] HasSession: ', pSessionId, sessionId);
 

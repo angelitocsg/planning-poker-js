@@ -7,20 +7,16 @@ import { SessionComponent } from './pages/session/session.component';
 
 const routes: Routes = [
   {
-    path: '',
-    component: CreateComponent,
-  },
-  {
-    path: 'session',
-    component: CreateComponent,
-  },
-  {
     path: 'session/:id',
     component: SessionComponent,
   },
   {
     path: 'session/:id/enter',
     component: NewPlayerComponent,
+  },
+  {
+    path: '**',
+    component: CreateComponent,
   },
 ];
 
